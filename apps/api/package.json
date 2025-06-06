@@ -1,0 +1,21 @@
+{
+  "name": "api",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "@repo/web": "workspace:*",
+    "express": "^4.1.0",
+    "express-http-proxy": "^2.1.1",
+    "http-proxy-middleware": "^3.0.5"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.17",
+    "tsx": "^4.7.1",
+    "typescript": "^5.8.3"
+  }
+}
