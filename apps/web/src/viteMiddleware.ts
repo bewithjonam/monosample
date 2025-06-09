@@ -4,15 +4,15 @@ import {createServer} from "vite"
 const viteDevServer = await createServer({
   server: {
     middlewareMode: true,
-    // fs: {
-    //   allow: [
-    //     '..'
-    //   ],
-    //   strict: false
-    // }
+    fs: {
+      allow: [
+        '..'
+      ],
+      strict: false
+    }
   }, 
-  appType: "custom",
-  // root: '../web/',
+  appType: "spa",
+  root: '../web/',
   base: "/web/",
 });
 

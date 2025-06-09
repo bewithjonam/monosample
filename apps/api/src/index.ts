@@ -2,12 +2,13 @@ import express from 'express';
 import { viteMiddleware } from '@repo/web/viteMiddleware';
 // import proxy from 'express-http-proxy';
 import { createProxyMiddleware } from 'http-proxy-middleware';
+import { getMessage } from './msg.js';
 
 const app = express()
 const port = 3000
 
 app.get('/', (req, res) => {
-  res.send('Hello World!')
+  res.send(getMessage());
 })
 
 
@@ -25,10 +26,10 @@ app.get('/', (req, res) => {
 //   // pathFilter: '/web/**/*'
 // }));
 
-app.use('/test', (req, res) => {
-// app.use('/web/*', (req, res) => {
-  res.sendFile('index2.html', { root: '../web' });
-});
+// app.use('/web/', (req, res) => {
+// // app.use('/web/*', (req, res) => {
+//   res.sendFile('index2.html', { root: '../web' });
+// });
 
 app.use(viteMiddleware);
 // app.use('/web/:wildcard', (req, res) => {

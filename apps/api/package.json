@@ -3,7 +3,7 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "dev": "tsx watch src/index.ts --exclude ./**/*",
+    "dev": "tsx watch --clear-screen=false --exclude=node_modules --exclude=../web/node_modules/**/* src/index.ts",
     "build": "tsc",
     "start": "node dist/index.js"
   },
