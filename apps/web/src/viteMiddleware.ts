@@ -3,11 +3,17 @@ import {createServer} from "vite"
 
 const viteDevServer = await createServer({
   server: {
-    middlewareMode: true
-  },
+    middlewareMode: true,
+    // fs: {
+    //   allow: [
+    //     '..'
+    //   ],
+    //   strict: false
+    // }
+  }, 
   appType: "custom",
-  root: '../../web/src',
-  // base: "/web",
+  // root: '../web/',
+  base: "/web/",
 });
 
 export const viteMiddleware = viteDevServer.middlewares;

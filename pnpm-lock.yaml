@@ -20,6 +20,9 @@ importers:
 
   apps/api:
     dependencies:
+      '@repo/ui':
+        specifier: workspace:*
+        version: link:../../packages/ui
       '@repo/web':
         specifier: workspace:*
         version: link:../web
@@ -82,6 +85,9 @@ importers:
 
   apps/web:
     dependencies:
+      '@repo/ui':
+        specifier: workspace:*
+        version: link:../../packages/ui
       express:
         specifier: ^4.1.0
         version: 4.21.2

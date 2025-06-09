@@ -16,19 +16,26 @@ app.get('/', (req, res) => {
 //   changeOrigin: true,
 // }));
 
-app.use(createProxyMiddleware<Request, Response>({
-  target: 'http://localhost:5173',
-  pathFilter: (pathname, req) => {
-    return !!pathname.match('^/web')
-  }
-  // changeOrigin: true,
-  // pathFilter: '/web/**/*'
-}));
-// app.use(viteMiddleware);
+// app.use(createProxyMiddleware<Request, Response>({
+//   target: 'http://localhost:5173',
+//   pathFilter: (pathname, req) => {
+//     return !!pathname.match('^/web')
+//   }
+//   // changeOrigin: true,
+//   // pathFilter: '/web/**/*'
+// }));
+
+app.use('/test', (req, res) => {
+// app.use('/web/*', (req, res) => {
+  res.sendFile('index2.html', { root: '../web' });
+});
+
+app.use(viteMiddleware);
 // app.use('/web/:wildcard', (req, res) => {
 // // app.use('/web/*', (req, res) => {
 //   res.sendFile('index2.html', { root: '../web' });
 // });
+
 
 
 // app.use('*', async (req, res) => {
